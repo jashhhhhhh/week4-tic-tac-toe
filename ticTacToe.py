@@ -51,17 +51,17 @@ def startGame(startingPlayer, board):
         print('Turn for ' + turn + '. Move on which space?')
         move = input()                                       #gets active player's move
         board[move] = turn                                   #swaps to next player
-        if( checkWinner(board, 'X') ):                       #checks for winning board
+        if( checkWinner(board, 'X') ):                       #checks for winning X board
             print('X wins!')
             break
-        elif ( checkWinner(board, 'O') ):
+        elif ( checkWinner(board, 'O') ):                   #checks for winning O board
             print('O wins!')
             break
     
-        if turn == 'X':                        
+        if turn == 'X':                                      #swaps to O                   
             turn = 'O'
         else:
-            turn = 'X'
+            turn = 'X'                                       #swaps to X
         
     printBoard(board)
     
