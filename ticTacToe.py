@@ -1,4 +1,4 @@
-board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
+theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
             'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',
             'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
 
@@ -8,6 +8,7 @@ def printBoard(board):
     print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
     print('-+-+-')
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
+printBoard(theBoard)
     # TO DO #################################################################
     # Write code in this function that prints the game board.               #
     # The code in this function should only print, the user should NOT      #
@@ -25,7 +26,7 @@ def checkWinner(board, player):
            (board['top-M'] == player and board['mid-M'] == player and board['low-M'] == player)
            (board['top-R'] == player and board['mid-R'] == player and board['low-R'] == player)
            (board['top-L'] == player and board['mid-M'] == player and board['low-R'] == player)
-           (board['top-R'] == player and board['mid-M'] == player and board['low-L'] == player)
+           (board['top-R'] == player and board['mid-M'] == player and board['low-L'] == player))
            
     
     # TO DO #################################################################
@@ -46,11 +47,11 @@ def startGame(startingPlayer, board):
 
     turn = startingPlayer
     for i in range(9):
-        printBoard(board)                      #prints game board
+        printBoard(board)                                    #prints game board
         print('Turn for ' + turn + '. Move on which space?')
-        move = input()                         #gets active player's move
-        board[move] = turn                     #swaps to next player
-        if( checkWinner(board, 'X') ):         #checks for winning board
+        move = input()                                       #gets active player's move
+        board[move] = turn                                   #swaps to next player
+        if( checkWinner(board, 'X') ):                       #checks for winning board
             print('X wins!')
             break
         elif ( checkWinner(board, 'O') ):
