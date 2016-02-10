@@ -9,6 +9,8 @@ def printBoard(board):
     print('-+-+-')
     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
 printBoard(theBoard)
+
+
     # TO DO #################################################################
     # Write code in this function that prints the game board.               #
     # The code in this function should only print, the user should NOT      #
@@ -40,6 +42,7 @@ def checkWinner(board, player):
     
     
 def startGame(startingPlayer, board):
+    
     # TO DO #################################################################
     # Add comments to each line in this function to describe what           #
     # is happening. You do not need to modify any of the Python code        #
@@ -48,7 +51,7 @@ def startGame(startingPlayer, board):
     turn = startingPlayer
     for i in range(9):
         printBoard(board)                                    #prints game board
-        print('Turn for ' + turn + '. Move on which space?')
+        print('Turn for ' + turn + '. Move on which space?') #tells whos turn
         move = input()                                       #gets active player's move
         board[move] = turn                                   #swaps to next player
         if( checkWinner(board, 'X') ):                       #checks for winning X board
